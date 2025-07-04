@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reuni Akbar - SMA N Siwalima Ambon Angkatan 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import Google Fonts as fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Import custom fonts from DaFont */
+        @font-face {
+            font-family: 'Faldith';
+            src: url('assets/font/Faldith.woff2') format('woff2'),
+                 url('assets/font/Faldith.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Neka Laurent';
+            src: url('assets/font/Neka\ Laurent\ \(Demo_Font\).woff2') format('woff2'),
+                 url('assets/font/Neka\ Laurent\ \(Demo_Font\).woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Caooli';
+            src: url('assets/font/CAOOLI.woff2') format('woff2'),
+                 url('assets/font/CAOOLI.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'classica';
+            src: url('assets/font/Classica-Book.woff2') format('woff2'),
+                 url('assets/font/Classica-Book.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+
+        :root {
+            --primary: #5e2b0c; /* Warna coklat tua untuk batik */
+            --secondary: #8e3b1d; /* Warna merah bata */
+            --accent: #d9a441; /* Warna emas tua */
+            --light: #f8f3e6; /* Warna krem */
+            --dark: #3a2a1f; /* Warna coklat gelap */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url('assets/images/IMG_1774.jpg');
+            backface-visibility: 80%;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            font-family: 'classica', 'Playfair Display', serif;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(237, 237, 237, 0.85);
+            z-index: -1;
+        }
+
+
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/BG_AWAL.jpg') center/cover no-repeat;
+            backface-visibility: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            transition: opacity 0.5s ease;
+
+        }
+
+        .splash-screen::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .splash-logo {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .splash-logo i {
+            font-size: 4rem;
+            color: var(--primary);
+        }
+
+        .splash-title {
+            font-family: 'Faldith', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+            animation: fadeIn 1.5s ease;
+            letter-spacing: 4px;
+        }
+
+        .splash-subtitle {
+            font-family: 'Neka Laurent', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0px;
+            max-width: 500px;
+            animation: fadeIn 2s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .splash-subisi {
+            font-family: 'Neka Laurent', serif;
+            font-size: 2rem;
+            color: #e2dcda;
+            box-shadow: #e8e0d0;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            animation: fadeIn 2s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .splash-isi {
+            font-family: 'classica', serif;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            max-width: 500px;
+            animation: fadeIn 2s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .open-invitation-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+            margin-top: 10px;
+            font-family: 'classica', sans-serif;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .open-invitation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 40px 0 20px;
+            position: relative;
+            margin-bottom: 40px;
+            background: rgba(228, 220, 220, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--accent);
+            background-image: url('assets/images/IMG_1774.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.freepik.com/premium-vector/vector-illustration-golden-design-pattern-traditional-indonesian-songket-weaving-ornament_283551442.htm#fromView=search&page=1&position=11&uuid=fbf1aff6-0ce3-409c-bfa1-5e2e7e419447&query=batik'); /* Ganti dengan pola batik */
+            background-size: 200px;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .header.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .header-border {
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            bottom: 0;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .header-title {
+            font-family: 'Faldith', cursive;
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+        
+        .header-title:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .subtitle {
+            font-family: 'Neka Laurent', serif;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .angkatan-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'classica', sans-serif;
+        }
+        
+        /* Countdown Styles */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 80px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(94, 43, 12, 0.1);
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .countdown-item.animate {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .countdown-number {
+            font-family: 'Caooli', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-family: 'classica', sans-serif;
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(94, 43, 12, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+            background-image: url("assets/images/BTK.jpg");
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        .card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+        
+        .card-title {
+            font-family: 'Caooli', sans-serif;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1px;
+        }
+        
+        .card-title:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        /* Invitation Styles */
+        .invitation-text {
+            font-family: 'classica', serif;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 30px 0;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease 0.3s;
+        }
+
+        .invitation-text.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .event-name {
+            font-family: 'Faldith', cursive;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease 0.2s;
+            letter-spacing: 1px;
+        }
+
+        .event-name.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .event-theme {
+            font-family: 'classica', sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease 0.4s;
+        }
+
+        .event-theme.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Event Details */
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            background: rgba(248, 243, 230, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(94, 43, 12, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            backdrop-filter: blur(5px);
+        }
+
+        .detail-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .detail-item:nth-child(1) { transition-delay: 0.1s; }
+        .detail-item:nth-child(2) { transition-delay: 0.2s; }
+        .detail-item:nth-child(3) { transition-delay: 0.3s; }
+        .detail-item:nth-child(4) { transition-delay: 0.4s; }
+        
+        .detail-item:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .detail-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .detail-item h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: 'classica', sans-serif;
+        }
+        
+        .detail-item p {
+            font-family: 'classica', serif;
+        }
+        
+        /* Rundown Styles */
+        .rundown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            font-family: 'classica', serif;
+        }
+
+        .rundown-table.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .rundown-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-family: 'classica', sans-serif;
+        }
+        
+        .rundown-table tr {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+
+        .rundown-table tr.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .rundown-table tr:nth-child(1) { transition-delay: 0.1s; }
+        .rundown-table tr:nth-child(2) { transition-delay: 0.2s; }
+        .rundown-table tr:nth-child(3) { transition-delay: 0.3s; }
+        .rundown-table tr:nth-child(4) { transition-delay: 0.4s; }
+        .rundown-table tr:nth-child(5) { transition-delay: 0.5s; }
+        .rundown-table tr:nth-child(6) { transition-delay: 0.6s; }
+        
+        .rundown-table tr:nth-child(even) {
+            background: rgba(248, 243, 230, 0.5);
+        }
+        
+        .rundown-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(94, 43, 12, 0.1);
+        }
+        
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            border: 5px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .gallery-item.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item:nth-child(1) { transition-delay: 0.1s; }
+        .gallery-item:nth-child(2) { transition-delay: 0.2s; }
+        .gallery-item:nth-child(3) { transition-delay: 0.3s; }
+        .gallery-item:nth-child(4) { transition-delay: 0.4s; }
+        
+        .gallery-item:hover {
+            transform: scale(1.03) !important;
+            border-color: var(--accent);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-family: 'classica', sans-serif;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Location Styles */
+        .location-info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            font-family: 'classica', serif;
+        }
+
+        .location-info.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .map-container {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            background: linear-gradient(45deg, #f8f3e6, #e8e0d0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s ease;
+            border: 5px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .map-container.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            font-family: 'classica', serif;
+        }
+        
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .map-btn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease 0.3s;
+        }
+
+        .map-btn.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* RSVP Styles */
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+            font-family: 'classica', serif;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .form-group.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-group:nth-child(1) { transition-delay: 0.1s; }
+        .form-group:nth-child(2) { transition-delay: 0.2s; }
+        .form-group:nth-child(3) { transition-delay: 0.3s; }
+        .form-group:nth-child(4) { transition-delay: 0.4s; }
+        .form-group:nth-child(5) { transition-delay: 0.5s; }
+        .form-group:nth-child(6) { transition-delay: 0.6s; }
+        .form-group:nth-child(7) { transition-delay: 0.7s; }
+        .form-group:nth-child(8) { transition-delay: 0.8s; }
+        
+        label {
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-family: 'classica', sans-serif;
+        }
+        
+        input, select, textarea {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(94, 43, 12, 0.3);
+            font-family: 'classica', serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(94, 43, 12, 0.2);
+        }
+        
+        .attendance-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(94, 43, 12, 0.3);
+            font-family: 'classica', sans-serif;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(94, 43, 12, 0.4);
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(94, 43, 12, 0.1);
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            font-family: 'classica', serif;
+        }
+
+        footer.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Music Controls */
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .music-controls.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .music-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: var(--secondary);
+        }
+        
+        .music-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            font-family: 'classica', serif;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 3rem;
+            }
+            
+            .splash-title {
+                font-size: 3rem;
+            }
+            
+            .splash-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .event-name {
+                font-size: 2.5rem;
+            }
+            
+            .card-title {
+                font-size: 2rem;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 10px;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .gallery-item {
+                height: 150px;
+            }
+
+            .music-controls {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .music-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .music-info {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+
+            .batik-ornament {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            form {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .form-group:nth-child(3),
+            .form-group:nth-child(4),
+            .form-group:nth-child(5) {
+                grid-column: span 2;
+            }
+            
+            .invitation-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-logo">
+            <i class="fas fa-school"></i>
+        </div>
+        <h1 class="splash-title">Reuni Akbar</h1>
+        <p class="splash-subtitle">SMA N Siwalima Ambon</p>
+        <p class="splash-subisi">02 Agustus 2025</p>
+        <p class="splash-isi">Kepada Yth Saudara/I</p>
+        <div class="angkatan-badge" id="angkatan-badge">Angkatan 7</div>
+        <button class="open-invitation-btn" id="openInvitationBtn">Buka Undangan</button>
+    </div>
+    
+    <!-- Main Content (initially hidden) -->
+    <div class="container" id="mainContainer">
+        <header class="header" id="header">
+           <h1 class="header-title">Reuni Akbar <span id="angkatan-title"></span></h1>
+            <div class="subtitle">SMA N SIWALIMA AMBON</div>
+            <div class="header-border">SAVE THE DATE</div>
+            
+            <!-- Countdown -->
+            <div class="countdown">
+                <div class="countdown-item" id="countdownDay">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item" id="countdownHour">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item" id="countdownMinute">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item" id="countdownSecond">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Undangan Section -->
+            <section class="card" id="invitationCard">
+                <h2 class="card-title">Undangan</h2>
+                <p class="invitation-text" id="invitationText">
+                    Dengan penuh kebahagiaan dan kerinduan, kami mengundang seluruh alumni Angkatan 7 untuk hadir dalam acara:
+                </p>
+                <div class="event-name" id="eventName">Reuni Akbar</div>
+                <div class="event-theme" id="eventTheme">"SMAN SIWALIMA AMBON 2025"</div>
+                
+                <div class="event-details">
+                    <div class="detail-item" id="detailDate">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Hari & Tanggal</h3>
+                        <p>Sabtu, 02 Agustus 2025</p>
+                    </div>
+                    <div class="detail-item" id="detailTime">
+                        <i class="fas fa-clock"></i>
+                        <h3>Waktu</h3>
+                        <p>13.00 WIT</p>
+                    </div>
+                    <div class="detail-item" id="detailPlace">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Tempat</h3>
+                        <p>SMAN SIWALIMA AMBON</p>
+                    </div>
+                    <div class="detail-item" id="detailDresscode">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>Dresscode</h3>
+                        <p>Formal</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#rsvp" class="btn">Konfirmasi Kehadiran</a>
+                </div>
+            </section>
+            
+            <!-- Rundown Section -->
+            <section class="card" id="rundownCard">
+                <h2 class="card-title">Rundown Acara</h2>
+                <table class="rundown-table" id="rundownTable">
+                    <thead>
+                        <tr>
+                            <th>Kegiatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mangente Siwalima</td>
+                        </tr>
+                        <tr>
+                            <td>Pembukaan</td>
+                        </tr>
+                        <tr>
+                            <td>Menyanyikan Lagu Indonesia Raya & Mars Siwalima</td>
+                        </tr>
+                        <tr>
+                            <td>Doa</td>
+                        </tr>
+                        <tr>
+                            <td>Sambutan :
+                                - Ketua Umum INA AMA
+                                - Kepala Sekolah SMAN Siwalima Ambon
+                                - Gubernur Maluku
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pertunjukan Siswa</td>
+                        </tr>
+                        <tr>
+                            <td>Foto Bersama</td>
+                        </tr>
+                        <tr>
+                            <td>ISHOMA</td>
+                        </tr>
+                        <tr>
+                            <td>Pertunjukan Alumni</td>
+                        </tr>
+                        <tr>
+                            <td>Makan Bersama</td>
+                        </tr>
+                        <tr></tr>
+                            <td>Pertunjukan Guest Star</td>
+                        </tr>
+                        <tr>
+                            <td>Fun Games</td>
+                        </tr>
+                        <tr>
+                            <td>Pemberian Hadiah dan Juara Lomba IAF</td>
+                        </tr>
+                        <tr>
+                            <td>Penutupan (Pertunjukan Guest Star)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="card" id="galleryCard">
+                <h2 class="card-title">Galeri Kenangan</h2>
+                <div class="gallery">
+                    <div class="gallery-item" id="galleryItem1">
+                        <img src="assets/images/1.jpg" alt="Angkatan 1">
+                        <div class="gallery-caption">Angkatan 1</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem2">
+                        <img src="assets/images/2.jpg" alt="Angkatan 2">
+                        <div class="gallery-caption">Angkatan 2</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem3">
+                        <img src="assets/images/3.jpg" alt="Angkatan 3">
+                        <div class="gallery-caption">Angkatan 3</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem4">
+                        <img src="assets/images/4.jpg" alt="Angkatan 4">
+                        <div class="gallery-caption">Angkatan 4</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem5">
+                        <img src="assets/images/5.jpg" alt="Angkatan 5">
+                        <div class="gallery-caption">Angkatan 5</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem6">
+                        <img src="assets/images/6.jpg" alt="Angkatan 6">
+                        <div class="gallery-caption">Angkatan 6</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem7">
+                        <img src="assets/images/7.JPG" alt="Angkatan 7">
+                        <div class="gallery-caption">Angkatan 7</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem8">
+                        <img src="assets/images/8.jpg" alt="Angkatan 8">
+                        <div class="gallery-caption">Angkatan 8</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem9">
+                        <img src="assets/images/9.jpeg" alt="Angkatan 9">
+                        <div class="gallery-caption">Angkatan 9</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem10">
+                        <img src="assets/images/10.jpg" alt="Angkatan 10">
+                        <div class="gallery-caption">Angkatan 10</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem11">
+                        <img src="assets/images/11.jpg" alt="Angkatan 11">
+                        <div class="gallery-caption">Angkatan 11</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem12">
+                        <img src="assets/images/12.jpg" alt="Angkatan 12">
+                        <div class="gallery-caption">Angkatan 12</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem13">
+                        <img src="assets/images/13.jpg" alt="Angkatan 13">
+                        <div class="gallery-caption">Angkatan 13</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem14">
+                        <img src="assets/images/14 (1).jpg" alt="Angkatan 14">
+                        <div class="gallery-caption">Angkatan 14</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem15">
+                        <img src="assets/images/15.jpg" alt="Angkatan 15">
+                        <div class="gallery-caption">Angkatan 15</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem16">
+                        <img src="assets/images/16.jpg" alt="Angkatan 16">
+                        <div class="gallery-caption">Angkatan 16</div>
+                    </div>
+                    <div class="gallery-item" id="galleryItem17">
+                        <img src="assets/images/17.jpg" alt="Angkatan 17">
+                        <div class="gallery-caption">Angkatan 17</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Location Section -->
+            <section class="card" id="locationCard">
+                <h2 class="card-title">Lokasi Acara</h2>
+                <p class="location-info" id="locationInfo">
+                    SMAN SIWALIMA AMBON<br>
+                    Jl. Wainapu Waiheru, Ambon<br>
+                    Maluku, Indonesia
+                </p>
+                
+                <div class="map-container" id="mapContainer">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>SMAN SIWALIMA AMBON</h3>
+                        <p>Jl. Wainapu Waiheru</p>
+                        <p>Klik untuk melihat lokasi</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;" class="map-btn" id="mapBtn">
+                    <a href="#" class="btn btn-outline">Lihat Lokasi</a>
+                </div>
+            </section>
+            
+            <!-- RSVP Section -->
+            <section id="rsvp" class="card" id="rsvpCard">
+                <h2 class="card-title">Konfirmasi Kehadiran</h2>
+                <p style="text-align: center; margin-bottom: 20px;">Silakan isi formulir di bawah ini untuk konfirmasi kehadiran via WhatsApp</p>
+                <form id="rsvpForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group" id="formName">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    <div class="form-group" id="formBatch">
+                        <label for="batch">Angkatan</label>
+                        <select id="batch" required>
+                            <option value="1">Angkatan 1</option>
+                            <option value="2">Angkatan 2</option>
+                            <option value="3">Angkatan 3</option>
+                            <option value="4">Angkatan 4</option>
+                            <option value="5">Angkatan 5</option>
+                            <option value="6">Angkatan 6</option>
+                            <option value="7">Angkatan 7</option>
+                            <option value="8">Angkatan 8</option>
+                            <option value="9">Angkatan 9</option>
+                            <option value="10">Angkatan 10</option>
+                            <option value="11">Angkatan 11</option>
+                            <option value="12">Angkatan 12</option>
+                            <option value="13">Angkatan 13</option>
+                            <option value="14">Angkatan 14</option>
+                            <option value="15">Angkatan 15</option>
+                            <option value="16">Angkatan 16</option>
+                            <option value="17">Angkatan 17</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="formAttendance">
+                        <label>Konfirmasi Kehadiran</label>
+                        <div class="attendance-options">
+                            <div class="option">
+                                <input type="radio" id="attend-yes" name="attendance" value="yes" required checked>
+                                <label for="attend-yes">Akan Hadir</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="attend-no" name="attendance" value="no">
+                                <label for="attend-no">Tidak Hadir</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="formGuests">
+                        <label for="guests">Jumlah Kehadiran (Bagi yang sudah berkeluarga)</label>
+                        <input type="number" id="guests" min="1" value="1" required>
+                    </div>
+                    <div class="form-group" id="formMessage">
+                        <label for="message">Pesan (opsional)</label>
+                        <textarea id="message" rows="4" placeholder="Tulis pesan untuk panitia..."></textarea>
+                    </div>
+                    <div class="form-group" style="grid-column: span 1; text-align: center;" id="formSubmit">
+                        <button type="submit" class="btn">Kirim via WhatsApp</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        
+        <footer id="footer">
+            <p>© 2025 Panitia IAF 2025. All rights reserved.</p>
+            <p>Untuk informasi lebih lanjut, hubungi: inaamafest.25 | 081243102063 (7th Yannes)</p>
+        </footer>
+    </div>
+    
+    <!-- Music Controls -->
+    <div class="music-controls" id="musicControls">
+        <div class="music-btn" id="playBtn">
+            <i class="fas fa-play"></i>
+        </div>
+        <div class="music-btn" id="pauseBtn" style="display: none;">
+            <i class="fas fa-pause"></i>
+        </div>
+        <div class="music-info" id="musicInfo">Memutar : Satu Siwalima</div>
+    </div>
+    
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="assets/audio/Ade Deng kaka.mpeg" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // WhatsApp integration
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const batch = document.getElementById('batch').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            
+            // Format WhatsApp message
+            const text = `Halo Panitia IAF 2025,\n\nSaya *${name}* dari *Angkatan ${batch}* ingin mengkonfirmasi kehadiran:\n\n*Status Kehadiran:* ${attendance === 'yes' ? 'Akan Hadir' : attendance === 'no' ? 'Tidak Hadir' : 'Mungkin Hadir'}\n*Jumlah Tamu:* ${guests}\n*Pesan:* ${message || '-'}\n\nTerima kasih.`;
+            
+            // Encode message for URL
+            const encodedText = encodeURIComponent(text);
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/6281243102063?text=${encodedText}`, '_blank');
+            
+            // Reset form
+            document.getElementById('rsvpForm').reset();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Splash screen
+            const splashScreen = document.getElementById('splashScreen');
+            const openInvitationBtn = document.getElementById('openInvitationBtn');
+            const mainContainer = document.getElementById('mainContainer');
+            
+            openInvitationBtn.addEventListener('click', function() {
+                splashScreen.style.opacity = '0';
+                splashScreen.style.pointerEvents = 'none';
+                mainContainer.style.display = 'block';
+                
+                // Trigger animations for header
+                setTimeout(() => {
+                    document.getElementById('header').classList.add('animate');
+                    
+                    // Animate countdown items one by one
+                    setTimeout(() => {
+                        document.getElementById('countdownDay').classList.add('animate');
+                    }, 100);
+                    setTimeout(() => {
+                        document.getElementById('countdownHour').classList.add('animate');
+                    }, 200);
+                    setTimeout(() => {
+                        document.getElementById('countdownMinute').classList.add('animate');
+                    }, 300);
+                    setTimeout(() => {
+                        document.getElementById('countdownSecond').classList.add('animate');
+                    }, 400);
+                }, 100);
+                
+                // Fade in main container
+                setTimeout(() => {
+                    mainContainer.style.opacity = '1';
+                }, 500);
+                
+                // Mulai musik otomatis setelah splash screen ditutup
+                const music = document.getElementById('backgroundMusic');
+                music.play().catch(e => console.log("Autoplay prevented: ", e));
+                
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 500);
+            });
+            
+            // Hitung mundur
+            const eventDate = new Date('August 2, 2025 13:00:00').getTime();
+            
+            const countdown = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById('days').innerHTML = '00';
+                    document.getElementById('hours').innerHTML = '00';
+                    document.getElementById('minutes').innerHTML = '00';
+                    document.getElementById('seconds').innerHTML = '00';
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+            }, 1000);
+            
+            // Musik kontrol
+            const music = document.getElementById('backgroundMusic');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const musicInfo = document.getElementById('musicInfo');
+            
+            // Setelah splash screen, musik akan otomatis play
+            setTimeout(() => {
+                document.getElementById('musicControls').classList.add('animate');
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'flex';
+                musicInfo.style.display = 'block';
+            }, 1000);
+            
+            playBtn.addEventListener('click', function() {
+                music.play();
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'flex';
+                musicInfo.style.display = 'block';
+            });
+            
+            pauseBtn.addEventListener('click', function() {
+                music.pause();
+                playBtn.style.display = 'flex';
+                pauseBtn.style.display = 'none';
+                musicInfo.style.display = 'none';
+            });
+            
+            // Map placeholder interaction
+            const mapPlaceholder = document.querySelector('.map-placeholder');
+            
+            mapPlaceholder.addEventListener('click', function() {
+                window.open('https://www.google.com/maps?q=SMA+N+Siwalima+Ambon', '_blank');
+            });
+            
+            // Button petunjuk arah
+            document.querySelector('.btn-outline').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://www.google.com/maps/dir//SMA+N+Siwalima+Ambon', '_blank');
+            });
+            
+            // Animasi scroll halus untuk anchor link
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Scroll animation observer
+            const animateOnScroll = function() {
+                const elementsToAnimate = document.querySelectorAll('.card, .header, .countdown-item, .detail-item, .rundown-table tr, .gallery-item, .location-info, .map-container, .map-btn, .form-group, footer');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            
+                            // Special cases for elements with multiple children
+                            if (entry.target.id === 'invitationCard') {
+                                setTimeout(() => {
+                                    document.getElementById('invitationText').classList.add('animate');
+                                }, 100);
+                                setTimeout(() => {
+                                    document.getElementById('eventName').classList.add('animate');
+                                }, 200);
+                                setTimeout(() => {
+                                    document.getElementById('eventTheme').classList.add('animate');
+                                }, 300);
+                                setTimeout(() => {
+                                    document.getElementById('detailDate').classList.add('animate');
+                                }, 400);
+                                setTimeout(() => {
+                                    document.getElementById('detailTime').classList.add('animate');
+                                }, 500);
+                                setTimeout(() => {
+                                    document.getElementById('detailPlace').classList.add('animate');
+                                }, 600);
+                                setTimeout(() => {
+                                    document.getElementById('detailDresscode').classList.add('animate');
+                                }, 700);
+                            }
+                            
+                            if (entry.target.id === 'rundownCard') {
+                                setTimeout(() => {
+                                    document.getElementById('rundownTable').classList.add('animate');
+                                    const rows = document.querySelectorAll('.rundown-table tr');
+                                    rows.forEach((row, index) => {
+                                        setTimeout(() => {
+                                            row.classList.add('animate');
+                                        }, index * 100);
+                                    });
+                                }, 100);
+                            }
+                            
+                            if (entry.target.id === 'galleryCard') {
+                                const galleryItems = document.querySelectorAll('.gallery-item');
+                                galleryItems.forEach((item, index) => {
+                                    setTimeout(() => {
+                                        item.classList.add('animate');
+                                    }, index * 100);
+                                });
+                            }
+                            
+                            if (entry.target.id === 'locationCard') {
+                                setTimeout(() => {
+                                    document.getElementById('locationInfo').classList.add('animate');
+                                }, 100);
+                                setTimeout(() => {
+                                    document.getElementById('mapContainer').classList.add('animate');
+                                }, 200);
+                                setTimeout(() => {
+                                    document.getElementById('mapBtn').classList.add('animate');
+                                }, 300);
+                            }
+                            
+                            if (entry.target.id === 'rsvpCard') {
+                                setTimeout(() => {
+                                    document.getElementById('formName').classList.add('animate');
+                                }, 100);
+                                setTimeout(() => {
+                                    document.getElementById('formBatch').classList.add('animate');
+                                }, 200);
+                                setTimeout(() => {
+                                    document.getElementById('formAttendance').classList.add('animate');
+                                }, 300);
+                                setTimeout(() => {
+                                    document.getElementById('formGuests').classList.add('animate');
+                                }, 400);
+                                setTimeout(() => {
+                                    document.getElementById('formMessage').classList.add('animate');
+                                }, 500);
+                                setTimeout(() => {
+                                    document.getElementById('formSubmit').classList.add('animate');
+                                }, 600);
+                            }
+                            
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                elementsToAnimate.forEach(element => {
+                    observer.observe(element);
+                });
+            };
+
+            // Jalankan animasi scroll setelah konten utama dimuat
+            setTimeout(() => {
+                animateOnScroll();
+            }, 1000);
+
+            // Get URL parameter for angkatan
+            const urlParams = new URLSearchParams(window.location.search);
+            const angkatan = urlParams.get('to');
+            if (angkatan) {
+                document.querySelector('.angkatan-badge').textContent = angkatan;
+            }
+
+            function getAngkatan() {
+             const url = new URL(window.location.href);
+        const angkatan = url.searchParams.get('angkatan') || 7; // Default angkatan 7
+             return angkatan;
+}
+        });
+    </script>
+</body>
+</html>
